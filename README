@@ -1,0 +1,32 @@
+========================================================================
+Autor: Michal Kosciolek
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog Zestaw06 zawiera programy z zestawu 6:
+--------------------------------------------------------------------
+
+(a) Program implementujacy binarne drzewo poszukiwan.
+  1) BinaryTree.cpp  - program glowny.
+	2) BinaryTree.hpp - plik naglowkowy z implementacja BST.
+
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu.
+
+-> Aby skompilowac programy nalezy wykonac komende:
+	make
+
+-> Aby uruchomic 1-szy program, nalezy wykonac komende:
+       	make run
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       	make clean
+
+========================================================================
