@@ -29,20 +29,25 @@ public:
         unsigned int k = hash(p.first);
         if(!array[k].find(p))
             return false;
+        if(array[k].find_pair(p.first) != nullptr && p.first == array[k].find_pair(p.first)->first){
+            Pair tmp = std::make_pair(p.first, array[k].find_pair(p.first)->second);
+            int index = array[k].find(tmp);
+            array[k].insert(index, p);
+            array[k].erase(index+1);
+        }
         if(array[k].empty())
             classes_counter++;
         array[k].push_back(p);
         size_++;
         return true;
-
     }
 
     bool find(const K& k){
-        return array[hash(k)].find_pair(k) != (std::string&) "-1";
+        return array[hash(k)].find_pair(k) != nullptr;
     }
 
     V& operator[](const K& k){
-        return array[hash(k)].find_pair(k);
+        return array[hash(k)].find_pair(k)->second;
     }
 
     //TODO

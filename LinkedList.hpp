@@ -137,16 +137,17 @@ public:
         return -1;
     }
 
-    /* Zwraca true, jesli para o podanym kluczu istnieje */
-    std::string& find_pair(const std::string& k){
+    /* Zwraca wskaznik do pary o danym kluczu */
+    std::pair<std::string, std::string>* find_pair(const std::string& k)
+    {
         Node<T> *walk = guard.next;
         for(int i=0; i<size(); i++)
         {
             if(walk->data.first == k)
-                return walk->data.second;
+                return &walk->data;
             walk = walk->next;
         }
-        return (std::string &) "-1";
+        return nullptr;
     }
 
     /* Usuwa z listy element x */
